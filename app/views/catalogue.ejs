@@ -6,12 +6,12 @@
   <img src="#" alt="Grains de cafés torréfiés">
   <form action="/catalogue/category" method="get">
     <select name="category" id="category">
-      <option value="acide">Acide</option>
-      <option value="chocolate">Chocolaté</option>     
-      <option value="corse">Corsé</option>
-      <option value="doux">Doux</option>
-      <option value="epice">Épicé</option>
-      <option value="fruite">Fruité</option>
+      <option value="Acide">Acide</option>
+      <option value="Chocolaté">Chocolaté</option>     
+      <option value="Corsé">Corsé</option>
+      <option value="Doux">Doux</option>
+      <option value="Épicé">Épicé</option>
+      <option value="Fruité">Fruité</option>
     </select>
     <input type="submit" value="Catégorie">
   </form>
@@ -30,7 +30,7 @@
         <p class="coffeeCategory"><%= coffee.category %></p>
         <p class="coffeeAvail"><%= coffee.availability %></p>
       </a>
-      <a href="/article/<%= coffee.name %>">Découvrir</a>
+      <a href="/article/<%= coffee.id %>">Découvrir</a>
     </div>
 
   <% }) %>

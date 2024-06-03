@@ -1,23 +1,20 @@
 <%- include('partials/header') %>
 
 <div class="coffeeContainer">
-   <% article.forEach(coffee => { %>
-      <h2>Détails du produit <%= article.name %></h2>
-      <img src="/#/<%= coffee.img %>" alt="<%= coffee.name %> illustration">
-      <div class="coffee">
-        <a href="/article/<%= coffee.name %>">
-          <p class="coffeeName"><%= coffee.name %></p>
-          <p class="coffeeDesc"><%= coffee.description %></p>
-          <p class="coffeeRef"><%= coffee.reference %></p>
-          <p class="coffeeOrigin"><%= coffee.origin %></p>
-          <p class="coffeePrice"><%= coffee.price %></p>
-          <p class="coffeeUsp"><%= coffee.usp %></p>
-          <p class="coffeeAvail"><%= coffee.availability %></p>
-        </a>
-        <a title="Catalogue" href="/catalogue">Catalogue</a>
-      </div>
-  
-     <% }) %>
+  <h2>Détails du produit <%= coffee.name %></h2>
+  <a href="/article/<%= coffee.id %>">
+    <img src="/#/<%= coffee.img %>" alt="<%= coffee.name %>">
+  </a>
+  <div class="coffee">
+    <p class="coffeeName"><%= coffee.name %></p>
+    <p class="coffeeDesc"><%= coffee.description %></p>
+    <p class="coffeeRef"><%= coffee.reference %></p>
+    <p class="coffeeOrigin"><%= coffee.origin %></p>
+    <p class="coffeePrice"><%= coffee.price %></p>
+    <p class="coffeeUsp"><%= coffee.usp %></p>
+    <p class="coffeeAvail"><%= coffee.availability %></p>
+    <a title="Catalogue" href="/catalogue">Catalogue</a>
   </div>
+</div>
 
 <%- include('partials/footer') %>

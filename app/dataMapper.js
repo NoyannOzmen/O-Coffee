@@ -7,18 +7,20 @@ const dataMapper = {
     return result.rows;
   },
   getSomeProducts : async () => {
-    const sql = 'SELECT * FROM coffees LIMIT 3 OFFSET 13';
+    const sql = `SELECT * FROM coffees LIMIT 3 OFFSET 13`;
     const result = await client.query(sql);
     return result.rows;
   },
-  getProductById : async (prodId) => {
+  getProductbyId : async (prodId) => {
     const sql = `SELECT * FROM coffees WHERE id = ${prodId}`;
     const result = await client.query(sql);
     return result.rows[0];
   },
   getProductbyCategory : async (prodCat) => {
-    const sql = `SELECT * FROM coffees WHERE id = ${prodCat}`;
+    const sql = `SELECT * FROM coffees WHERE category = '${prodCat}'`;
     const result = await client.query(sql);
     return result.rows;
   },
 }
+
+module.exports = dataMapper;

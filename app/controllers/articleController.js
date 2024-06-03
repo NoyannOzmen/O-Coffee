@@ -10,7 +10,7 @@ const articleController = {
       res.status(500).send(`Erreur de notre côté : ${error}`)
     }
   },
-  async articleReducedCatalogue(req,res) {
+/*   async articleReducedCatalogue(req,res) {
     try {
       const coffeesSample = await dataMapper.getSomeProducts();
       res.render("catalogue", { coffeesSample });
@@ -18,20 +18,20 @@ const articleController = {
     catch (error) {
       res.status(500).send(`Erreur de notre côté : ${error}`)
     }
-  },
+  }, */
   async articlePage(req,res) {
     const targetId = Number(req.params.id);
     try {
-      const article = await dataMapper.getProductbyId(targetId);
-      res.render("article", { article });
+      const coffee = await dataMapper.getProductbyId(targetId);
+      res.render("article", { coffee });
     }
     catch (error) {
       res.status(500).send(`Erreur de notre côté : ${error}`)
     }
   },
-  async CategoryPage(req,res) {
-    const targetCat = Number(req.params.category);
+  async categoryPage(req,res) {
     try {
+      const targetCat = req.query.category;
       const coffees = await dataMapper.getProductbyCategory(targetCat);
       res.render("catalogue", { coffees });
     }
