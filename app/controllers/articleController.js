@@ -14,7 +14,7 @@ const articleController = {
       const targetId = Number(req.params.id);
       try {
         const article = await dataMapper.getArticlebyId(targetId);
-        res.render("article", { coffees });
+        res.render("article", { article });
       }
       catch (error) {
         res.status(500).send(`Erreur de notre côté : ${error}`)

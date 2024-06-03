@@ -1,3 +1,41 @@
 <%- include('partials/header') %>
 
+<h2>Nos produits</h2>
+
+<div class="catalogueContainer">
+  <img src="#" alt="Grains de cafés torréfiés">
+  <form action="/catalogue/category" method="get">
+    <select name="category" id="category">
+      <option value="acide">Acide</option>
+      <option value="chocolate">Chocolaté</option>     
+      <option value="corse">Corsé</option>
+      <option value="doux">Doux</option>
+      <option value="epice">Épicé</option>
+      <option value="fruite">Fruité</option>
+    </select>
+    <input type="submit" value="Catégorie">
+  </form>
+</div>
+
+<div class="coffeeContainer">
+<!--   <% coffees.forEach(coffee => { %>
+
+    <div class="coffee">
+        <img src="/#/<%= coffee.img %>" alt="<%= coffee.name %> illustration">
+        <p class="coffeeName"><%= coffee.name %></p>
+        <p class="coffeeDesc"><%= coffee.description %></p>
+        <p class="coffeeRef"><%= coffee.reference %></p>
+        <p class="coffeeOrigin"><%= coffee.origin %></p>
+        <p class="coffeePrice"><%= coffee.price %></p>
+        <p class="coffeeCategory"><%= coffee.category %></p>
+        <p class="coffeeAvail"><%= coffee.availability %></p>
+      </a>
+      <a href="/article/<%= coffee.name %>">Découvrir</a>
+    </div>
+
+  <% }) %> -->
+</div>
+
+<button>Voir tout</button>
+
 <%- include('partials/footer') %>
