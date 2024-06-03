@@ -1,11 +1,12 @@
 <%- include('partials/header') %>
 
-<h2>Nos produits</h2>
+<div class="catalogue-header">
+  <h2>Notre Catalogue</h2>
+</div>
 
-<div class="catalogueContainer">
-  <img src="#" alt="Grains de cafés torréfiés">
+<div class="search-container">
   <form action="/catalogue/category" method="get">
-    <select name="category" id="category">
+    <select class="search-dropdown" name="category" id="category">
       <option value="Acide">Acide</option>
       <option value="Chocolaté">Chocolaté</option>     
       <option value="Corsé">Corsé</option>
@@ -13,29 +14,69 @@
       <option value="Épicé">Épicé</option>
       <option value="Fruité">Fruité</option>
     </select>
-    <input type="submit" value="Catégorie">
+    <input class="search-btn" type="submit" value="Rechercher par catégorie">
   </form>
 </div>
 
-<div class="coffeeContainer">
-<% coffees.forEach(coffee => { %>
-
-    <div class="coffee">
-        <img src="/#/<%= coffee.img %>" alt="<%= coffee.name %> illustration">
-        <p class="coffeeName"><%= coffee.name %></p>
+<div class="coffee-container">
+  <% coffees.forEach(coffee => { %>
+    <div class="catalogue-coffee">
+      <img class="coffee-img" src="../../integration/images/<%= coffee.reference %>.png" alt="<%= coffee.name %> illustration">
+      <div class="coffee-infos">
+        <h3 class="coffeeName"><%= coffee.name %></h3>
+        <hr>
+        <p class="coffeeOrigin">Origine : <%= coffee.origin %></p>
+        <p class="coffeeCategory">Type : <%= coffee.category %></p>
+        <hr>
         <p class="coffeeDesc"><%= coffee.description %></p>
-        <p class="coffeeRef"><%= coffee.reference %></p>
-        <p class="coffeeOrigin"><%= coffee.origin %></p>
-        <p class="coffeePrice"><%= coffee.price %></p>
-        <p class="coffeeCategory"><%= coffee.category %></p>
-        <p class="coffeeAvail"><%= coffee.availability %></p>
-      </a>
-      <a href="/article/<%= coffee.id %>">Découvrir</a>
+        <p class="coffeePrice">Prix : <span><%= coffee.price %>&nbsp;&euro;</span></p>
+        <hr>
+        <p class="coffeeRef">Réf : <%= coffee.reference %></p>       
+        <p class="coffeeAvail">Disponible : <span><%= coffee.availability %></span></p>
+      </div>
+      <a class="btn" href="/article/<%= coffee.id %>">Découvrir</a>
     </div>
-
   <% }) %>
 </div>
 
-<button>Voir tout</button>
+<!-- <div class="coffee-container">
+<% for( let i = 0; i < coffees.length - 13; i++ ) { %>
+    <div class="catalogue-coffee">
+      <img class="coffee-img" src="../../integration/images/<%= coffees[i].reference %>.png" alt="<%= coffees[i].name %> illustration">
+      <div class="coffee-infos">
+        <h3 class="coffeeName"><%= coffees[i].name %></h3>
+        <p class="coffeeOrigin">Origine : <%= coffees[i].origin %></p>
+        <p class="coffeeCategory">Type : <%= coffees[i].category %></p>
+        <p class="coffeeDesc"><%= coffees[i].description %></p>
+        <p class="coffeePrice">Prix : <%= coffees[i].price %>&nbsp;&euro;</p>
+        <p class="coffeeRef">Réf : <%= coffees[i].reference %></p>       
+        <p class="coffeeAvail">Disponible : <span><%= coffees[i].availability %></span></p>
+      </div>
+      <a class="btn" href="/article/<%= coffees[i].id %>">Découvrir</a>
+    </div>
+<% } %>
+</div>
+
+<a class="catalogue-display" href="#" data-toggle="modal" data-target="#Modal">Voir tout</a>
+
+<div class="modal fade" id="reviewsModal" tabindex="-1" role="dialog" aria-labelledby="reviewsModalLabel" aria-hidden="true">
+  <div class="coffee-container">
+    <% for( let i = 3; i < coffees.length; i++ ) { %>
+      <div class="catalogue-coffee">
+          <img class="coffee-img" src="../../integration/images/<%= coffees[i].reference %>.png" alt="<%= coffees[i].name %> illustration">
+          <div class="coffee-infos">
+            <h3 class="coffeeName"><%= coffees[i].name %></h3>
+            <p class="coffeeOrigin">Origine : <%= coffees[i].origin %></p>
+            <p class="coffeeCategory">Type : <%= coffees[i].category %></p>
+            <p class="coffeeDesc"><%= coffees[i].description %></p>
+            <p class="coffeePrice">Prix : <%= coffees[i].price %>&nbsp;&euro;</p>
+            <p class="coffeeRef">Réf : <%= coffees[i].reference %></p>       
+            <p class="coffeeAvail">Disponible : <span><%= coffees[i].availability %></span></p>
+          </div>
+          <a class="btn" href="/article/<%= coffees[i].id %>">Découvrir</a>
+        </div>
+    <% } %>
+    </div>
+</div>   -->
 
 <%- include('partials/footer') %>

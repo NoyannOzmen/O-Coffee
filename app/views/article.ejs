@@ -2,18 +2,23 @@
 
 <div class="coffeeContainer">
   <h2>Détails du produit <%= coffee.name %></h2>
-  <a href="/article/<%= coffee.id %>">
-    <img src="/#/<%= coffee.img %>" alt="<%= coffee.name %>">
-  </a>
-  <div class="coffee">
-    <p class="coffeeName"><%= coffee.name %></p>
-    <p class="coffeeDesc"><%= coffee.description %></p>
-    <p class="coffeeRef"><%= coffee.reference %></p>
-    <p class="coffeeOrigin"><%= coffee.origin %></p>
-    <p class="coffeePrice"><%= coffee.price %></p>
-    <p class="coffeeUsp"><%= coffee.usp %></p>
-    <p class="coffeeAvail"><%= coffee.availability %></p>
-    <a title="Catalogue" href="/catalogue">Catalogue</a>
+  <div class="article-coffee">
+    <a href="/article/<%= coffee.id %>">
+      <img class="coffee-article-img" src="../../integration/images/<%= coffee.reference %>.png" alt="<%= coffee.name %> illustration">
+    </a>
+    <div class="coffee-infos">
+      <h3 class="coffeeName"><%= coffee.name %></h3>
+      <hr>
+      <p class="coffeeOrigin">Origine : <%= coffee.origin %></p>
+      <p class="coffeeCategory">Type : <%= coffee.category %></p>
+      <hr>
+      <p class="coffeeDesc"><%= coffee.description %></p>
+      <p class="coffeePrice">Prix : <span><%= coffee.price %>&nbsp;&euro;</span></p>
+      <hr>
+      <p class="coffeeRef">Réf : <%= coffee.reference %></p>       
+      <p class="coffeeAvail">Disponible : <span><%= coffee.availability %></span></p>
+    </div>
+    <a class="catalogue-display" title="Catalogue" href="/catalogue">Catalogue</a>
   </div>
 </div>
 
