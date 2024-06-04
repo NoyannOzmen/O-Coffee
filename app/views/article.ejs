@@ -1,11 +1,10 @@
 <%- include('partials/header') %>
 
 <div class="coffeeContainer">
-  <h2>Détails du produit <%= coffee.name %></h2>
+  <a href="/article/<%= coffee.id %>">
+    <img class="coffee-article-img" src="../../integration/images/<%= coffee.reference %>.png" alt="<%= coffee.name %> illustration">
+  </a>
   <div class="article-coffee">
-    <a href="/article/<%= coffee.id %>">
-      <img class="coffee-article-img" src="../../integration/images/<%= coffee.reference %>.png" alt="<%= coffee.name %> illustration">
-    </a>
     <div class="coffee-infos">
       <h3 class="coffeeName"><%= coffee.name %></h3>
       <hr>
