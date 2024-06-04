@@ -88,6 +88,11 @@ header {
   color: #fffdd0;
 }
 
+.nav-items:focus, .nav-items:hover {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+}
+
 /* Burger Menu */
 
 .hamburger {

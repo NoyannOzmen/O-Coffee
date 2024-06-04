@@ -6,7 +6,7 @@
 
 <div class="search-container">
   <form action="/catalogue/category" method="get">
-    <select class="search-dropdown" name="category" id="category" aria-label="Catégorie">
+    <select tabindex=0 class="search-dropdown" name="category" id="category" aria-label="Catégorie">
       <option value="" disabled selected hidden>Catégorie</option>
       <option value="Acide">Acide</option>
       <option value="Chocolaté">Chocolaté</option>     
@@ -19,7 +19,7 @@
   </form>
 </div>
 
-<div class="coffee-container">
+<section class="coffee-container">
   <% coffees.forEach(coffee => { %>
     <div class="catalogue-coffee">
       <img class="coffee-img" src="/integration/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %> illustration">
@@ -30,15 +30,13 @@
         <p class="coffeeCategory">Type : <%= coffee.category %></p>
         <hr>
         <p class="coffeeDesc"><%= coffee.description %></p>
-<!--         <p class="coffeePrice">Prix : <span><%= coffee.price %>&nbsp;&euro;</span></p> -->
-        <hr>
-<!--         <p class="coffeeRef">Réf : <%= coffee.reference %></p>    -->    
+        <hr>  
         <p class="coffeeAvail">Disponible : <span><%= coffee.availability %></span></p>
       </div>
       <a class="btn" href="/article/<%= coffee.id %>">Découvrir</a>
     </div>
   <% }) %>
-</div>
+</section>
 
 <button class="display-full">Voir tout</button>
 
