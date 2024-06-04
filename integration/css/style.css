@@ -234,7 +234,7 @@ span {
 }
 
 .catalogue-header {
-  background: #6f4e37 center / cover no-repeat url(../images/about.webp);
+  background: #6f4e37 center / cover no-repeat url(../images/aboutbanner.webp);
   height:15vh;
   line-height: 15vh;
   color: #fffdd0;
@@ -366,8 +366,8 @@ footer {
 
   .imgBlurb-image {
     max-width: 100%;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
   }
 
   .coffee {

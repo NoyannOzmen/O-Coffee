@@ -6,7 +6,8 @@
 
 <div class="search-container">
   <form action="/catalogue/category" method="get">
-    <select class="search-dropdown" name="category" id="category">
+    <select class="search-dropdown" name="category" id="category" aria-label="Catégorie">
+      <option value="" disabled selected hidden>Catégorie</option>
       <option value="Acide">Acide</option>
       <option value="Chocolaté">Chocolaté</option>     
       <option value="Corsé">Corsé</option>
@@ -14,7 +15,7 @@
       <option value="Épicé">Épicé</option>
       <option value="Fruité">Fruité</option>
     </select>
-    <input class="search-btn" type="submit" value="Rechercher par catégorie">
+    <input class="search-btn" type="submit" value="Rechercher">
   </form>
 </div>
 
