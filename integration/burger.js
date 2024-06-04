@@ -14,14 +14,3 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
-
-const displayFull = document.querySelector(".display-full");
-const coffeeContainer = document.querySelectorAll(".catalogue-coffee")
-console.log(coffeeContainer);
-
-displayFull.addEventListener("click", displayCatalogue)
-
-function displayCatalogue() {
-    coffeeContainer.forEach(n => n.classList.toggle("active"));
-    displayFull.classList.toggle("hidden");
-}

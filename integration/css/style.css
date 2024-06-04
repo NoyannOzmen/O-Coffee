@@ -136,11 +136,12 @@ h1 {
 }
 
 .imgBlurb {
-  width: 48vw;
+  width: 45vw;
 }
 
 .imgBlurb-image {
-  max-width: 60%;
+  height: 60%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   border-radius: 15px;
@@ -151,7 +152,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 48vw;
+  width: 45vw;
   font-size: 1.8rem;
   line-height: 2.6rem;
   text-align: justify;
@@ -249,7 +250,7 @@ span {
   padding: 2rem;
   text-align: center;
   margin-top: 2rem;
-  width:50%;
+  width:60%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -324,7 +325,7 @@ span {
 }
 
 .coffee-article-img {
-  width: 25%;
+  max-width: 60%; 
   display: block;
   margin: 2rem auto;
   border-radius: 5px;
@@ -429,11 +430,11 @@ footer {
     width: calc(80% - 1rem);
   }
 
-  .coffee-article-img {
+/*   .coffee-article-img {
     width: 400px;
     height: 200px;
   }
-
+ */
   footer {
     font-size: 1.8rem;
     height: 8vh;
