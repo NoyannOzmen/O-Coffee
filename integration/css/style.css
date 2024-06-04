@@ -56,6 +56,8 @@ html {
   font-size: 62.5%;
 }
 
+/* Header + Nav */
+
 header {
   display : flex;
   justify-content: space-between;
@@ -86,6 +88,8 @@ header {
   color: #fffdd0;
 }
 
+/* Burger Menu */
+
 .hamburger {
   display: none;
 }
@@ -99,6 +103,8 @@ header {
   transition: all 0.3s ease-in-out;
   background-color: #101010;
 }
+
+/* Mise en Page Générale */
 
 main {
   background-color: #fffdd0;
@@ -117,13 +123,16 @@ h1 {
   margin-left: 150px;
 }
 
+/* Page d'Accueil */
+
 .home-container {
   display : flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   padding-top: 2rem;
+
 }
 
 .imgBlurb {
@@ -166,6 +175,13 @@ h1 {
   align-content: stretch;
   padding: 1.3rem;
 }
+
+/* Affichage des 3 premiers résultats seulement */
+.coffee-container div:nth-child(n+4) {
+  display: none;
+}
+
+/* Informations des Produits */
 
 .coffee {
   width: calc((90% - 1rem) / 3);
@@ -212,6 +228,8 @@ span {
   text-align: center;
 }
 
+/* Boutons Divers */
+
 .btn, .catalogue-display {
   background-color: #6f4e37;
   border: 0;
@@ -241,6 +259,8 @@ span {
   border-radius: 5px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* Menu de recherche par catégorie */
 
 .search-container {
   margin-top: 2rem;
@@ -272,6 +292,8 @@ span {
   text-align: center;
 }
 
+/* Page de détail d'un produit */
+
 .article-coffee {
   width: 55%;
   font-size: 1.6rem;
@@ -295,6 +317,8 @@ span {
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* 404 */
+
 .error-img {
   display: block;
   margin-top: 6rem;
@@ -302,6 +326,8 @@ span {
   margin-right: auto;
   margin-bottom: 8rem;
 }
+
+/* Footer */
 
 footer {
   background-color: #6f4e37;
@@ -312,6 +338,8 @@ footer {
   height: 6vh;
   line-height: 6vh;
 }
+
+/* Responsive */
 
 @media only screen and (max-width: 768px) {
   .nav-links {
