@@ -13,12 +13,12 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-	font-size: 100%;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -27,23 +27,23 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote::before, blockquote::after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Mon CSS */
@@ -110,6 +110,7 @@ main {
   background-color: #fffdd0;
   padding: 2rem;
   min-height: 90vh;
+  min-width: 100vw;
 }
 
 h1, h2, h3, h4 {
@@ -132,7 +133,7 @@ h1 {
   align-items: center;
   width: 100%;
   padding-top: 2rem;
-
+  
 }
 
 .imgBlurb {
@@ -156,6 +157,7 @@ h1 {
   font-size: 1.8rem;
   line-height: 2.6rem;
   text-align: justify;
+  text-justify: inter-word;
   padding-left: 2rem;
 }
 
@@ -164,6 +166,7 @@ h1 {
   font-size: 1.8rem;
   line-height: 2.6rem;
   text-align: justify;
+  text-justify: inter-word;
   padding: 2rem;
 }
 
@@ -405,22 +408,26 @@ footer {
     padding: 2rem 0;
     width: 100%;
   }
-
+  
   .imgBlurb-image {
     max-width: 100%;
     height: 300px;
     width: 300px;
   }
-
-  .coffee {
-      width: calc(60% - 1rem);
+  
+  .coffee-container {
+    padding: 0;
   }
-
+  
+  .coffee {
+    width: 100%;
+  }
+  
   .coffee-img {
     height: 200px;
     width: 200px;
   }
-
+  
   .catalogue-header {
     height: 8vh;
     line-height: 8vh;
@@ -429,12 +436,12 @@ footer {
   .catalogue-coffee {
     width: calc(80% - 1rem);
   }
-
-/*   .coffee-article-img {
+  
+  /*   .coffee-article-img {
     width: 400px;
     height: 200px;
   }
- */
+  */
   footer {
     font-size: 1.8rem;
     height: 8vh;
