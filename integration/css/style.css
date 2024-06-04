@@ -320,12 +320,12 @@ span {
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   display: block;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto
 }
 
 .coffee-article-img {
-  max-width: 60%; 
+  max-width: 80%; 
   display: block;
   margin: 2rem auto;
   border-radius: 5px;
