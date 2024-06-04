@@ -40,44 +40,7 @@
   <% }) %>
 </div>
 
-<!-- <div class="coffee-container">
-<% for( let i = 0; i < coffees.length - 13; i++ ) { %>
-    <div class="catalogue-coffee">
-      <img class="coffee-img" src="../../integration/images/<%= coffees[i].reference %>.png" alt="<%= coffees[i].name %> illustration">
-      <div class="coffee-infos">
-        <h3 class="coffeeName"><%= coffees[i].name %></h3>
-        <p class="coffeeOrigin">Origine : <%= coffees[i].origin %></p>
-        <p class="coffeeCategory">Type : <%= coffees[i].category %></p>
-        <p class="coffeeDesc"><%= coffees[i].description %></p>
-        <p class="coffeePrice">Prix : <%= coffees[i].price %>&nbsp;&euro;</p>
-        <p class="coffeeRef">Réf : <%= coffees[i].reference %></p>       
-        <p class="coffeeAvail">Disponible : <span><%= coffees[i].availability %></span></p>
-      </div>
-      <a class="btn" href="/article/<%= coffees[i].id %>">Découvrir</a>
-    </div>
-<% } %>
-</div>
+<button class="display-full">Voir tout</button>
 
-<a class="catalogue-display" href="#" data-toggle="modal" data-target="#Modal">Voir tout</a>
-
-<div class="modal fade" id="reviewsModal" tabindex="-1" role="dialog" aria-labelledby="reviewsModalLabel" aria-hidden="true">
-  <div class="coffee-container">
-    <% for( let i = 3; i < coffees.length; i++ ) { %>
-      <div class="catalogue-coffee">
-          <img class="coffee-img" src="../../integration/images/<%= coffees[i].reference %>.png" alt="<%= coffees[i].name %> illustration">
-          <div class="coffee-infos">
-            <h3 class="coffeeName"><%= coffees[i].name %></h3>
-            <p class="coffeeOrigin">Origine : <%= coffees[i].origin %></p>
-            <p class="coffeeCategory">Type : <%= coffees[i].category %></p>
-            <p class="coffeeDesc"><%= coffees[i].description %></p>
-            <p class="coffeePrice">Prix : <%= coffees[i].price %>&nbsp;&euro;</p>
-            <p class="coffeeRef">Réf : <%= coffees[i].reference %></p>       
-            <p class="coffeeAvail">Disponible : <span><%= coffees[i].availability %></span></p>
-          </div>
-          <a class="btn" href="/article/<%= coffees[i].id %>">Découvrir</a>
-        </div>
-    <% } %>
-    </div>
-</div>   -->
 
 <%- include('partials/footer') %>
