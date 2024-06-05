@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const session = require('express-session');
 
 const router = require('./app/router');
 
@@ -12,6 +13,16 @@ app.set("views", "./app/views");
 app.set("view engine", "ejs");
 
 app.use("/integration", express.static('integration'));
+
+app.use(session({
+  resave: true, 
+  saveUninitialized: true,
+  secret: "Santa",
+  cookie: {
+    secure: false,
+    maxAge: (1000*60*60)
+  }
+}));
 
 app.use(router);
 
