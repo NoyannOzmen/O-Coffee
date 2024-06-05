@@ -1,14 +1,15 @@
+const bcrypt = require("bcryptjs"); 
+
 const loginController = {
   loginPage: (req,res) => {
     res.render("connection");
   },
 
-  userLogin: (req,res) => {
-    const userLogin = req.body.login;
-    const userPassWord = req.body.password;
+  userLogin: async (req,res) => {
+    const userLogin = await bcrypt.hash(req.body.login, 8);
+    const userPassWord = await bcrypt.hash(req.body.password, 10);
     req.session.login = userLogin;
     req.session.password = userPassWord;
-    console.log(req.session);
     res.redirect("/");
   },
 };

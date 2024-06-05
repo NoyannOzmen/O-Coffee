@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require("body-parser");
 const session = require('express-session');
+const bcrypt = require("bcryptjs"); 
 
 const router = require('./app/router');
 
