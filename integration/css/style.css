@@ -471,6 +471,41 @@ table.panier-table tbody tr td {
   margin: 0 auto;
 }
 
+/* Login */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  padding-top: 3rem;
+}
+
+.login-label {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.login-field {
+    height: 5rem;
+    width: 18rem;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.login-btn {
+    height: 5rem;
+    width: 18rem;
+    font-size: 1.5rem;
+    background-color: #6f4e37;
+    color: white;
+    border: 0;
+    border-radius: 12px;
+    text-align: center;
+}
+
 /* Footer */
 
 footer {

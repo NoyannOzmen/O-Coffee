@@ -1,12 +1,15 @@
 <%- include('partials/header') %>
 
 <h2>Se connecter</h2>
-<form method="POST">
-  <label for="login">Utilisateur</label>
-  <input type="text" name="login" id="login" />
-  <label for="password">Mot de Passe</label>
-  <input type="text" name="password" id="password" />
-  <button type="submit">Envoyer</button>
+<form class="login-form" method="POST">
+  
+  <label class="login-label" for="login">Utilisateur</label>
+  <input class="login-field" tabindex=0 type="text" name="login" id="login" placeholder="Jean Pepper"/>
+  
+  <label class="login-label" for="password">Mot de Passe</label>
+  <input class="login-field" tabindex=0 type="text" name="password" id="password" placeholder="password" />
+  
+  <button class="login-btn" tabindex=0 type="submit">Se connecter</button>
 </form>
 
 <%- include('partials/footer') %>

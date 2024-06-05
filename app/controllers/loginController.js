@@ -8,6 +8,7 @@ const loginController = {
     const userPassWord = req.body.password;
     req.session.login = userLogin;
     req.session.password = userPassWord;
+    console.log(req.session);
     res.redirect("/");
   },
 };
