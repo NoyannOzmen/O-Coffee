@@ -384,7 +384,7 @@ span {
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   display: block;
-  margin-left: 0;
+  margin-left: auto;
   margin-right: auto
 }
 

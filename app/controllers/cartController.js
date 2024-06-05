@@ -31,7 +31,7 @@ const cartController = {
   removeFromCart: async (req, res) => {
     const targetId = Number(req.params.id);
     try {
-      req.session.cart = req.session.cart.filter((cart) => cart.id === targetId);
+      req.session.cart = req.session.cart.filter((cart) => cart.id !== targetId);
       res.redirect("/panier");
     }
     catch (error) {
