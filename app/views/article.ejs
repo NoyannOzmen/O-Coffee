@@ -17,8 +17,9 @@
       <p class="coffeeRef">Réf : <%= coffee.reference %></p>       
       <p class="coffeeAvail">Disponible : <span><%= coffee.availability %></span></p>
     </div>
-    <a class="catalogue-display" title="Catalogue" href="/catalogue">Catalogue</a>
-    <a class="btn" href="/panier/add/<%= coffee.id %>">Ajouter au panier</a>
+    <a class="btn" title="Catalogue" href="/catalogue">Catalogue</a>
+    <a class="btn" aria-label="J'acquiers" href="/panier/add/<%= coffee.id %>"><i class="icon-cart"></i></a>
+    <a class="btn" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>"><i class="icon-heart"></i></a>
   </div>
 </section>
 

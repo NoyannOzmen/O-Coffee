@@ -62,19 +62,51 @@ table {
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+@font-face {
+  font-family: 'icomoon2';
+  src:  url('/integration/fonts/icomoon2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon-heart:before {
   font-family: 'icomoon' !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  vertical-align: middle;
+  line-height: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  content: "\e901";
 }
 
-.icon-heart:before {
-  content: "\e901";
+.icon-cart:before {
+  font-family: 'icomoon2' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: middle;
+  line-height: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e93a";
+}
+
+.icon-card:before {
+  font-family: 'icomoon2' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: middle;
+  line-height: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e93f"
 }
 
 html {
@@ -143,7 +175,7 @@ main {
   padding: 3rem;
 }
 
-h1, h2, h3, h4, th {
+h1, h2, h3, h4, h5 {
   font-size: 2.8rem;
   font-weight: 900;
   margin: 15px 0;
@@ -378,6 +410,9 @@ span {
 
 .panier-container, .favorites-container {
   min-height: calc(100vh - 185px);
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .row {
@@ -394,9 +429,46 @@ span {
 }
 
 .panier-table, .favorites-table {
-  width: 100%;
-  margin-bottom: 1rem;
+  width: 90%;
+  margin: 1rem auto;
   color: #212529;
+  border-collapse: collapse;
+}
+
+.coffee-cart-img {
+  width: 125px;
+  height: 125px;
+  padding: .25rem;
+}
+
+.panier-table thead th {
+  vertical-align: bottom;
+  border-bottom : 2px solid #6f4e37;
+  border-top: 1px solid #6f4e37;
+}
+
+th {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+table.panier-table tbody tr td {
+  vertical-align: middle;
+}
+
+.coffee-blurb {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cart {
+  width:40%;
+}
+
+.btn-cart {
+  margin: 0 auto;
 }
 
 /* Footer */

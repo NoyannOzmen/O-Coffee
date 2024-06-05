@@ -29,7 +29,7 @@ const cartController = {
   },
 
   removeFromCart: async (req, res) => {
-    const targetId = req.params.id;
+    const targetId = Number(req.params.id);
     try {
       req.session.cart = req.session.cart.filter((cart) => cart.id === targetId);
       res.redirect("/panier");

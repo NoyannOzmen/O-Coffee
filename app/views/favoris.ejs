@@ -4,29 +4,36 @@
 
   <div class="row">
     <div class="col">
-      <h2>Votre Panier</h2>
-      <table class="favorites-table">
+      <h2>Votre Produits Favoris</h2>
+      <table class="panier-table">
         <thead>
+          <th></th>
           <th>Article</th>
-          <th>Prix</th>
+          <th>Description</th>
+          <th></th>
           <th></th>
         </thead>
         <tbody>
           <% favoritesList.forEach(coffee => { %>
             <tr>
               <td>
-                <img class="coffee-article-img-thumb" src="/integration/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %>">
-                <div>
-                    <h3 class="coffeeName"><%= coffee.name %></h3>
-                </div>
+                  <img class="coffee-cart-img" src="/integration/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %>">
               </td>
 
               <td>
-                <h3 class="coffeeDesc"><%= coffee.description %></h3>
+                  <p class="coffee-blurb"><%= coffee.name %></p>
               </td>
 
               <td>
-                <a href="/favoris/delete/<%= coffee.id %>">Supprimer des favoris</a>
+                <h3 class="coffee-blurb"><%= coffee.description %></h3>
+              </td>
+
+              <td>
+                <a class="btn btn-cart" aria-label="J'acquiers" href="/panier/add/<%= coffee.id %>"><i class="icon-cart"></i></a>
+              </td>
+
+              <td>
+                <a class="btn btn-cart" href="/favoris/delete/<%= coffee.id %>">Supprimer</a>
               </td>
             </tr>
           <% }) %>
@@ -34,7 +41,7 @@
       </table>
 
       <div class="row">
-          <a class="catalogue-display" title="Catalogue" href="/catalogue">Retour au catalogue</a>
+          <a class="catalogue-display cart" title="Catalogue" href="/catalogue">Retour au catalogue</a>
       </div>
 
     </div>

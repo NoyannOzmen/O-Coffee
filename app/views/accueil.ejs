@@ -85,9 +85,8 @@
           <p class="coffeeDesc"><%= coffee.description %></p>
         </div>
         <a class="btn" href="/article/<%= coffee.id %>">Découvrir</a>
-        <a class="btn" href="/panier/add/<%= coffee.id %>">Ajouter au panier</a>
-        <a class="btn" href="/favoris/add/<%= coffee.id %>"><i class="icon-heart"></i></a>
-<!--         <button class="btn" type="button" aria-label="J'aime"><i class="icon-heart"></i></button> -->
+        <a class="btn" aria-label="J'acquiers" href="/panier/add/<%= coffee.id %>"><i class="icon-cart"></i></a>
+        <a class="btn" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>"><i class="icon-heart"></i></a>
       </div>
       
       <% }) %>

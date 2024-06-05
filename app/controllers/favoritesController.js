@@ -5,7 +5,7 @@ const favoritesController = {
   favoritesPage: async (req, res) => {
       try {
         let favoritesList = req.session.favorites ?? [];
-        res.render("favorites", { favoritesList });
+        res.render("favoris", { favoritesList });
       }
       catch (error) {
         res.status(500).send(`Erreur de notre côté : ${error}`);
@@ -19,20 +19,20 @@ const favoritesController = {
     if (!req.session.favorites.find((coffee) => coffee.id === req.params.id)) {
       try {
         const coffee = await dataMapper.getProductbyId(req.params.id);
-        req.session.favorites.push(coffee);    
+        req.session.favorites.push(coffee);   
       }
       catch (error) {
         res.status(500).send(`Erreur de notre côté : ${error}`);
       }
     }
-    res.redirect("/favorites");
+    res.redirect("/favoris");
   },
 
   removeFromFavorites: async (req, res) => {
-    const targetId = req.params.id;
+    const targetId = Number(req.params.id);
     try {
-      req.session.favorites = req.session.favorites.filter((favorites) => favorites.id === targetId);
-      res.redirect("/favorites");
+      req.session.favorites = req.session.favorites.filter((coffee) => coffee.id !== targetId);
+      res.redirect("/favoris");
     }
     catch (error) {
       res.status(500).send(`Erreur de notre côté : ${error}`);
