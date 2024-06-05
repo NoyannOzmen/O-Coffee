@@ -506,6 +506,33 @@ table.panier-table tbody tr td {
     text-align: center;
 }
 
+/* Login Message */
+
+.alert {
+  padding: 2rem;
+  width: 60%;
+  color: #6f4e37;
+  margin: -20px auto;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+#fade {
+  -webkit-animation: cssAnimation 2s forwards; 
+  animation: cssAnimation 2s forwards;
+}
+@keyframes cssAnimation {
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+  0%   {opacity: 1;}
+  90%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 /* Footer */
 
 footer {

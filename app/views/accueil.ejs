@@ -1,5 +1,11 @@
 <%- include('partials/header') %>
 
+<% if(locals.message){ %>
+  <div id="fade" class="alert" role="alert">
+      <p><%=message.success%></p> 
+  </div>
+<% } %>
+
 <section class="home-container">  
   <div class="textBlurb">
     <h2>Qui sommes-nous ?</h2>

@@ -6,11 +6,13 @@ const loginController = {
   },
 
   userLogin: async (req,res) => {
-    const userLogin = await bcrypt.hash(req.body.login, 8);
+/*     const userLogin = await bcrypt.hash(req.body.login, 8); */
+    const userLogin = req.body.login;
     const userPassWord = await bcrypt.hash(req.body.password, 10);
     req.session.login = userLogin;
     req.session.password = userPassWord;
-    res.redirect("/");
+    req.flash('success', `Connecté avec succès ! Bienvenue, ${userLogin} !`);
+    res.redirect('/');
   },
 };
 

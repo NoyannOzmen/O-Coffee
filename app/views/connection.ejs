@@ -1,13 +1,13 @@
 <%- include('partials/header') %>
 
 <h2>Se connecter</h2>
-<form class="login-form" method="POST">
+<form action="/connection" class="login-form" method="POST">
   
   <label class="login-label" for="login">Utilisateur</label>
-  <input class="login-field" tabindex=0 type="text" name="login" id="login" placeholder="Jean Pepper"/>
+  <input class="login-field" tabindex=0 type="text" name="login" id="login" placeholder="Jean Pepper" required/>
   
   <label class="login-label" for="password">Mot de Passe</label>
-  <input class="login-field" tabindex=0 type="text" name="password" id="password" placeholder="password" />
+  <input class="login-field" tabindex=0 type="text" name="password" id="password" placeholder="password" required/>
   
   <button class="login-btn" tabindex=0 type="submit">Se connecter</button>
 </form>

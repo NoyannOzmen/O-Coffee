@@ -1,9 +1,10 @@
 require('dotenv').config();
 
 const express = require('express');
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const session = require('express-session');
-const bcrypt = require("bcryptjs"); 
+const bcrypt = require('bcryptjs');
+const flash = require('connect-flash')
 
 const router = require('./app/router');
 
@@ -27,6 +28,13 @@ app.use(session({
     maxAge: (1000*60*60)
   }
 }));
+
+app.use(flash());
+
+app.use(function(req,res,next) {
+  res.locals.message = req.flash();
+  next();
+})
 
 app.use(router);
 
