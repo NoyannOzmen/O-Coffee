@@ -33,7 +33,13 @@
               </td>
 
               <td>
-                <a class="btn btn-cart" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>"><i class="icon-heart"></i></a>
+                <a class="btn" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>">
+                  <% if (favorites.find((fav) => fav.id === coffee.id)) { %>
+                    <i class="icon-heart-filled"></i>
+                   <% } else { %>
+                    <i class="icon-heart"></i>            
+                  <% } %>
+                </a>
                 <a class="btn btn-cart" href="/panier/delete/<%= coffee.id %>">Retirer</a>
               </td>
 

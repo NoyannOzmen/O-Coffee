@@ -3,9 +3,13 @@ const dataMapper = require("../dataMapper");
 const cartController = {
 
   cartPage: async (req, res) => {
+    if (!req.session.favorites) {
+      req.session.favorites = [];
+    }
+    const favorites = req.session.favorites;
       try {
         let shoppingList = req.session.cart ?? [];
-        res.render("panier", { shoppingList });
+        res.render("panier", { shoppingList, favorites });
       }
       catch (error) {
         res.status(500).send(`Erreur de notre côté : ${error}`);

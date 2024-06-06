@@ -19,7 +19,13 @@
     </div>
     <a class="btn" title="Catalogue" href="/catalogue">Catalogue</a>
     <a class="btn" aria-label="J'acquiers" href="/panier/add/<%= coffee.id %>"><i class="icon-cart"></i></a>
-    <a class="btn" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>"><i class="icon-heart"></i></a>
+    <a class="btn" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>">
+      <% if (favorites.find((fav) => fav.id === coffee.id)) { %>
+        <i class="icon-heart-filled"></i>
+       <% } else { %>
+        <i class="icon-heart"></i>            
+      <% } %>
+    </a>
   </div>
 </section>
 

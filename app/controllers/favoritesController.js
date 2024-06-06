@@ -11,6 +11,7 @@ const favoritesController = {
       res.status(500).send(`Erreur de notre côté : ${error}`);
     }
   },
+  
 
   addToFavorites: async (req, res) => {
     const targetId = Number(req.params.id);
@@ -26,7 +27,7 @@ const favoritesController = {
         res.status(500).send(`Erreur de notre côté : ${error}`);
       }
     }
-    /*     res.redirect("/favoris"); */
+    res.redirect("/favoris");
   },
   
   removeFromFavorites: async (req, res) => {

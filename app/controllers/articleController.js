@@ -2,9 +2,13 @@ const dataMapper = require("../dataMapper");
 
 const articleController = {
   async articleCatalogue(req,res) {
+    if (!req.session.favorites) {
+      req.session.favorites = [];
+    }
+    const favorites = req.session.favorites;
     try {
       const coffees = await dataMapper.getAllProducts();
-      res.render("catalogue", { coffees });
+      res.render("catalogue", { coffees, favorites });
     }
     catch (error) {
       res.status(500).send(`Erreur de notre côté : ${error}`)
@@ -21,9 +25,13 @@ const articleController = {
   }, */
   async articlePage(req,res) {
     const targetId = Number(req.params.id);
+    if (!req.session.favorites) {
+      req.session.favorites = [];
+    }
+    const favorites = req.session.favorites;
     try {
       const coffee = await dataMapper.getProductbyId(targetId);
-      res.render("article", { coffee });
+      res.render("article", { coffee, favorites });
     }
     catch (error) {
       res.status(500).send(`Erreur de notre côté : ${error}`)
