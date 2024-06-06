@@ -1,15 +1,15 @@
 const dataMapper = require("../dataMapper");
 
 const favoritesController = {
-
+  
   favoritesPage: async (req, res) => {
-      try {
-        let favoritesList = req.session.favorites ?? [];
-        res.render("favoris", { favoritesList });
-      }
-      catch (error) {
-        res.status(500).send(`Erreur de notre côté : ${error}`);
-      }
+    try {
+      let favoritesList = req.session.favorites ?? [];
+      res.render("favoris", { favoritesList });
+    }
+    catch (error) {
+      res.status(500).send(`Erreur de notre côté : ${error}`);
+    }
   },
 
   addToFavorites: async (req, res) => {
@@ -26,9 +26,9 @@ const favoritesController = {
         res.status(500).send(`Erreur de notre côté : ${error}`);
       }
     }
-    res.redirect("/favoris");
+    /*     res.redirect("/favoris"); */
   },
-
+  
   removeFromFavorites: async (req, res) => {
     const targetId = Number(req.params.id);
     try {

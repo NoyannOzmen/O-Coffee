@@ -83,6 +83,20 @@ table {
   content: "\e901";
 }
 
+.icon-heart-filled:before {
+  font-family: 'icomoon2' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: middle;
+  line-height: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e9da";
+}
+
+
 .icon-cart:before {
   font-family: 'icomoon2' !important;
   font-style: normal;
@@ -490,10 +504,6 @@ table.panier-table tbody tr td {
   font-size: 1.8rem;
   font-weight: 700;
   text-align: center;
-}
-
-.desc {
-  text-align: justify;
 }
 
 .cart {

@@ -20,7 +20,7 @@ const cartController = {
     if (!req.session.cart.find((coffee) => coffee.id === targetId)) {
       try {
         const coffee = await dataMapper.getProductbyId(targetId);
-        req.session.cart.push(coffee);    
+        req.session.cart.push(coffee);
       }
       catch (error) {
         res.status(500).send(`Erreur de notre côté : ${error}`);

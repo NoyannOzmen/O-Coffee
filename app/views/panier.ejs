@@ -4,8 +4,13 @@
 
   <div class="row">
     <div class="col">
-      <h2>Votre Panier</h2>
-      <% if (shoppingList !== []) { %>
+      <% if (shoppingList.length < 1) { %>
+        <h2>Votre panier est vide</h2>
+      <% } else { %>
+        <h2>Votre panier</h2>
+      <% } %>
+
+      <% if (shoppingList.length > 0) { %>
        
       <table class="panier-table">
         <thead>
@@ -54,12 +59,13 @@
           </tr>
         </tfoot>
       </table>
-
+      <% } %>
       <div class="row">
           <a class="catalogue-display cart" title="Catalogue" href="/catalogue">Retour au catalogue</a>
-          <a class="catalogue-display cart" title="Paiement" href="/paiement">Valider et Payer</a> 
+          <% if (shoppingList.length > 0) { %>
+            <a class="catalogue-display cart" title="Paiement" href="/paiement">Valider et Payer</a> 
+          <% } %>
       </div>
-      <% } %>
     </div>
   </div>
 </div>
