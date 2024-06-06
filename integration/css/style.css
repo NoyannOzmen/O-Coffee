@@ -503,6 +503,7 @@ table.panier-table tbody tr td {
 .form-cost {
   background-color: #fffdd0;
   border: none;
+  width: 100%;
 }
 
 .formcost input::-webkit-outer-spin-button,
