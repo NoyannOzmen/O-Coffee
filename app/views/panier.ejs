@@ -5,13 +5,16 @@
   <div class="row">
     <div class="col">
       <h2>Votre Panier</h2>
+      <% if (shoppingList !== []) { %>
+       
       <table class="panier-table">
         <thead>
           <th></th>
           <th>Article</th>
+          <th></th>
           <th>Prix</th>
-          <th></th>
-          <th></th>
+          <th>Qté</th>
+          <th>Sous-total</th>
         </thead>
         <tbody>
           <% shoppingList.forEach(coffee => { %>
@@ -25,25 +28,38 @@
               </td>
 
               <td>
-                <p class="coffee-blurb"><%= coffee.price %>&nbsp;&euro;</p>
-              </td>
-
-              <td>
                 <a class="btn btn-cart" aria-label="J'aime" href="/favoris/add/<%= coffee.id %>"><i class="icon-heart"></i></a>
-              </td>
-
-              <td>
                 <a class="btn btn-cart" href="/panier/delete/<%= coffee.id %>">Retirer</a>
               </td>
+
+              <td>
+                <p class="coffee-blurb form-calc form-cost"><%= coffee.price %>&nbsp;&euro;</p>
+              </td>
+
+              <td>
+                <input type="number" tabindex=0 class="coffee-blurb form-calc form-qty" placeholder="1" min="0" max="10">
+              </td>
+
+              <td>
+                <input class="coffee-blurb form-line" value="0" readonly>
+              </td>
+
             </tr>
           <% }) %>
-
+        </tbody>
+        <tfoot>
+          <tr>
+            <td class="coffee-blurb" colspan="2">Votre total :</td>
+            <td class="coffee-blurb" colspan="4" id="total" value="0" readonly></td>
+          </tr>
+        </tfoot>
       </table>
 
       <div class="row">
           <a class="catalogue-display cart" title="Catalogue" href="/catalogue">Retour au catalogue</a>
+          <a class="catalogue-display cart" title="Paiement" href="/paiement">Valider et Payer</a> 
       </div>
-
+      <% } %>
     </div>
   </div>
 </div>

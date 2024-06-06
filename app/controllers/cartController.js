@@ -13,12 +13,13 @@ const cartController = {
   },
 
   addToCart: async (req, res) => {
+    const targetId = Number(req.params.id);
     if (!req.session.cart) {
       req.session.cart = [];
     }
-    if (!req.session.cart.find((coffee) => coffee.id === req.params.id)) {
+    if (!req.session.cart.find((coffee) => coffee.id === targetId)) {
       try {
-        const coffee = await dataMapper.getProductbyId(req.params.id);
+        const coffee = await dataMapper.getProductbyId(targetId);
         req.session.cart.push(coffee);    
       }
       catch (error) {

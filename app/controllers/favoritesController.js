@@ -13,12 +13,13 @@ const favoritesController = {
   },
 
   addToFavorites: async (req, res) => {
+    const targetId = Number(req.params.id);
     if (!req.session.favorites) {
       req.session.favorites = [];
     }
-    if (!req.session.favorites.find((coffee) => coffee.id === req.params.id)) {
+    if (!req.session.favorites.find((coffee) => coffee.id === targetId)) {
       try {
-        const coffee = await dataMapper.getProductbyId(req.params.id);
+        const coffee = await dataMapper.getProductbyId(targetId);
         req.session.favorites.push(coffee);   
       }
       catch (error) {
