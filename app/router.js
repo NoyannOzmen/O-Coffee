@@ -5,6 +5,7 @@ const articleController = require('./controllers/articleController')
 const cartController = require('./controllers/cartController');
 const loginController = require('./controllers/loginController')
 const favoritesController = require('./controllers/favoritesController')
+const billingController = require('./controllers/billingController');
 
 const router = express.Router();
 
@@ -24,5 +25,7 @@ router.get('/favoris/delete/:id', favoritesController.removeFromFavorites);
 
 router.get("/connection", loginController.loginPage);
 router.post("/connection", loginController.userLogin);
+
+router.get("/paiement", billingController.billingPage);
 
 module.exports = router;

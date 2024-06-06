@@ -17,12 +17,12 @@
           <th></th>
           <th>Article</th>
           <th></th>
-          <th>Prix</th>
+          <th>Prix en &euro;</th>
           <th>Qté</th>
-          <th>Sous-total</th>
+          <th>Sous-total en &euro;</th>
         </thead>
-        <tbody>
-          <% shoppingList.forEach(coffee => { %>
+        <tbody id="table-body">
+          <% shoppingList.forEach(function(coffee, key) { %>
             <tr>
               <td>
                   <img class="coffee-cart-img" src="/integration/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %>">
@@ -44,15 +44,15 @@
               </td>
 
               <td>
-                <p class="coffee-blurb form-calc form-cost"><%= coffee.price %>&nbsp;&euro;</p>
+                <input id="form-cost-<%= key %>" type="number" class="coffee-blurb form-cost" readonly value="<%= coffee.price %>"></input>
               </td>
 
               <td>
-                <input type="number" tabindex=0 class="coffee-blurb form-calc form-qty" placeholder="1" min="0" max="10">
+                <input id="form-qty-<%= key %>" type="number" tabindex=0 class="coffee-blurb form-qty" placeholder="1" min="0" max="10" oninput="calcSubTotal()">
               </td>
 
               <td>
-                <input class="coffee-blurb form-line" value="0" readonly>
+                <p id="form-sub-<%= key %>" class="coffee-blurb form-line" readonly placeholder="0">0</p>
               </td>
 
             </tr>
@@ -60,14 +60,16 @@
         </tbody>
         <tfoot>
           <tr>
-            <td class="coffee-blurb" colspan="2">Votre total :</td>
-            <td class="coffee-blurb" colspan="4" id="total" value="0" readonly></td>
+            <td colspan="5">Votre total en &euro;</td>
+            <td colspan="1">
+              <p id="form-total" class="coffee-blurb form-total" readonly placeholder="0">0</p>
+            </td>
           </tr>
         </tfoot>
       </table>
       <% } %>
       <div class="row">
-          <a class="catalogue-display cart" title="Catalogue" href="/catalogue">Retour au catalogue</a>
+          <a class="catalogue-display cart" title="Catalogue" href="/catalogue">Continuer vos achats</a>
           <% if (shoppingList.length > 0) { %>
             <a class="catalogue-display cart" title="Paiement" href="/paiement">Valider et Payer</a> 
           <% } %>
@@ -75,5 +77,7 @@
     </div>
   </div>
 </div>
+
+<script defer src="/integration/calcul.js"></script>
 
 <%- include('partials/footer') %>
