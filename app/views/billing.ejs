@@ -24,7 +24,7 @@
         <label>Rue</label>
         <input type="text" name="street" required>
         <label>Code postal</label>
-        <input type="text" name="zip" required>
+        <input type="number" name="zip" required>
         <label>Ville</label>
         <input type="text" name="city" required>
       </p>
@@ -38,7 +38,7 @@
       <p class="input">
         <legend>Informations liées au paiement</legend>
         <label>Type de carte&nbsp;&nbsp;<i class="icon-card"></i></label>
-        <select tabindex=0 class="dropdown" name="card" id="card" aria-label="Carte de Paiement">
+        <select tabindex=0 class="dropdown" name="card" id="card" aria-label="Carte de Paiement" required>
           <option value="" disabled selected hidden>Sélectionnez</option>
           <option value="Visa">Visa</option>
           <option value="Electron">Electron</option>     
@@ -49,21 +49,22 @@
       </p>
       <p class="input">
         <label>Numéro de carte</label>
-        <input type="number" name="cc-num" maxlength="16" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" required>
+        <input type="number" name="ccnum" maxlength="16" placeholder="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" required>
         <label>Nom du porteur</label>
-        <input type="text" name="cc-name" required>
+        <input type="text" name="ccowner" required>
         <label>Date de validité</label>
-        <input type="date" name="cc-exp" required>
+        <input type="date" name="ccexp" required>
         <label>Numéros de sécurité</label>
-        <input type="number" name="cc-cvv" maxlength="3" placeholder="_ _ _" required>
+        <input type="password" name="cvv" maxlength="3" placeholder="_ _ _" required>
       </p>
     </fieldset>
+  <div class="row">
+    <a class="catalogue-display cart" title="Catalogue" href="/panier">Revenir en arrière</a>
+    <button class="catalogue-display cart" tabindex=0 type="submit">Procéder au paiement</button>
+  </div>
   </form>
 </section>
 
-<div class="row">
-  <a class="catalogue-display cart" title="Catalogue" href="/panier">Revenir en arrière</a>
-  <button class="catalogue-display cart" tabindex=0 type="submit">Procéder au paiement</button>
-  </div>
+
 
 <%- include('partials/footer') %>

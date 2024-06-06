@@ -27,5 +27,6 @@ router.get("/connection", loginController.loginPage);
 router.post("/connection", loginController.userLogin);
 
 router.get("/paiement", billingController.billingPage);
+router.post("/paiement", billingController.userBilled);
 
 module.exports = router;

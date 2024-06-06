@@ -595,16 +595,22 @@ table.panier-table tbody tr td {
 /* Formulaire de Paiement */
 
 .cart__forms {
-  margin: 0 8vw;
+  margin: 0 5vw;
   padding: 3rem 0;
 }
 
 .forms {
   display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 3rem -1rem;
   border-top: 1px solid #6f4e37;
   border-bottom: 2px solid #6f4e37;
+}
+
+fieldset {
+  width: calc((90% - 1rem) / 3);
+  margin-bottom: 1rem;
 }
 
 legend {
@@ -620,26 +626,36 @@ legend {
   width:25vw
 }
 
-.forms input[type=text],.forms input[type=date],.forms input[type=number],.forms select {
+.forms input[type=text],.forms input[type=date],.forms input[type=number],.forms input[type=password],.forms select {
   width:25vw;
   background-color: #fffdd0;
   border: none;
   border-bottom: 1px solid #6f4e37;
   height:1.8rem;
   padding: 1rem 0;
+  margin: 1rem 0;
 }
 
-.forms textarea {
+.input textarea {
   background-color: #fffdd0;
-  border: none;
-  border-bottom: 1px solid #6f4e37;
+  border: 1px solid #6f4e37;
   padding: 1rem 0;
+  width: 100%;
 }
 
-.forms label {
-  padding: 1rem 0;
+.input label {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
+.cart__forms .row {
+  width: 90vw;
+  margin-bottom: 2rem;
+}
+
+.cart__forms .row .cart {
+  font-size: 1.8rem;
+}
 
 /* Tout ça pour une checkmark */
 
