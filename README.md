@@ -1,6 +1,6 @@
 # O'Coffee
 
-![Logo de PetFosterConnect](/integration/images/logo.svg)
+<img src="./integration/images/logo.svg" alt="O'Coffee logo" width="200"/>
 
 ## About
 
