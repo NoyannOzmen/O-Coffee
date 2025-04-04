@@ -3,9 +3,6 @@ const dataMapper = require("../dataMapper");
 const cartController = {
 
   cartPage: async (req, res) => {
-    if (!req.session.favorites) {
-      req.session.favorites = [];
-    }
     const favorites = req.session.favorites;
       try {
         let shoppingList = req.session.cart ?? [];
@@ -23,11 +20,12 @@ const cartController = {
     }
     if (!req.session.cart.find((coffee) => coffee.id === targetId)) {
       try {
-        const coffee = await dataMapper.getProductbyId(targetId);
+        const coffee = await dataMapper.getProductById(targetId);
         req.session.cart.push(coffee);
       }
       catch (error) {
-        res.status(500).send(`Erreur de notre côté : ${error}`);
+        console.error(error);
+        res.status(500).send("Erreur serveur. Réessayez plus tard")
       }
     }
     res.redirect("/panier");
@@ -40,7 +38,8 @@ const cartController = {
       res.redirect("/panier");
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`);
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
 };

@@ -8,23 +8,23 @@ const favoritesController = {
       res.render("favoris", { favoritesList });
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`);
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
   
 
   addToFavorites: async (req, res) => {
     const targetId = Number(req.params.id);
-    if (!req.session.favorites) {
-      req.session.favorites = [];
-    }
+
     if (!req.session.favorites.find((coffee) => coffee.id === targetId)) {
       try {
-        const coffee = await dataMapper.getProductbyId(targetId);
+        const coffee = await dataMapper.getProductById(targetId);
         req.session.favorites.push(coffee);   
       }
       catch (error) {
-        res.status(500).send(`Erreur de notre côté : ${error}`);
+        console.error(error);
+        res.status(500).send("Erreur serveur. Réessayez plus tard")
       }
     }
     res.redirect("/favoris");
@@ -37,7 +37,8 @@ const favoritesController = {
       res.redirect("/favoris");
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`);
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
 };

@@ -22,7 +22,7 @@
 <section class="coffee-container">
   <% coffees.forEach(coffee => { %>
     <div class="catalogue-coffee">
-      <img class="coffee-img" src="/integration/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %> illustration">
+      <img class="coffee-img" src="/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %> illustration">
       <div class="coffee-infos">
         <h3 class="coffeeName"><%= coffee.name %></h3>
         <hr>
@@ -48,6 +48,6 @@
 
 <button class="display-full">Voir tout</button>
 
-<script async src="/integration/display.js"></script>
+<script async src="/js/display.js"></script>
 
 <%- include('partials/footer') %>

@@ -1,6 +1,6 @@
 # O'Coffee
 
-<img src="./integration/images/logo.svg" alt="O'Coffee logo" width="200"/>
+<img src="./public/images/logo.svg" alt="O'Coffee logo" width="200"/>
 
 ## About
 
@@ -26,7 +26,7 @@ Ce projet, réalisé tôt durant la formation, reste néanmoins un témoin de mo
 First ever solo student project, following a (fictitious) client request.
 
 While the original scope of this project was to only implement 3-4 views, namely a Homepage, Catalogue, Product details, and custom 404,
-it has expanded to include a few bonus functionalities :
+it has expanded during the allotted timeframe to include a few bonus functionalities :
 
 - A responsive navigation menu as a "burger menu" for mobile displays,
 - Allowing the user to search for a specific category of product, thanks to a dropdown menu on the Catalogue page,

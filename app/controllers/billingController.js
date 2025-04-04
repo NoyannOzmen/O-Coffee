@@ -7,7 +7,8 @@ const billingController = {
       res.render("billing");
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`)
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
   userBilled: async (req,res) => {

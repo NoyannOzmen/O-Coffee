@@ -11,14 +11,16 @@ const dataMapper = {
     const result = await client.query(sql);
     return result.rows;
   },
-  getProductbyId : async (prodId) => {
-    const sql = `SELECT * FROM coffees WHERE id = ${prodId} ORDER BY name`;
-    const result = await client.query(sql);
+  getProductById : async (prodId) => {
+    const text = "SELECT * FROM coffees WHERE id = $1 ORDER BY name";
+    const values = [`${prodId}`];
+    const result = await client.query(text, values);
     return result.rows[0];
   },
-  getProductbyCategory : async (prodCat) => {
-    const sql = `SELECT * FROM coffees WHERE category = '${prodCat}' ORDER By name`;
-    const result = await client.query(sql);
+  getProductByCategory : async (prodCat) => {
+    const text = "SELECT * FROM coffees WHERE category = $1 ORDER By name";
+    const values = [`${prodCat}`];
+    const result = await client.query(text, values);
     return result.rows;
   },
 }

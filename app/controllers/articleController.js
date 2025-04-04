@@ -2,49 +2,38 @@ const dataMapper = require("../dataMapper");
 
 const articleController = {
   async articleCatalogue(req,res) {
-    if (!req.session.favorites) {
-      req.session.favorites = [];
-    }
     const favorites = req.session.favorites;
     try {
       const coffees = await dataMapper.getAllProducts();
       res.render("catalogue", { coffees, favorites });
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`)
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
-/*   async articleReducedCatalogue(req,res) {
-    try {
-      const coffeesSample = await dataMapper.getSomeProducts();
-      res.render("catalogue", { coffeesSample });
-    }
-    catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`)
-    }
-  }, */
   async articlePage(req,res) {
     const targetId = Number(req.params.id);
-    if (!req.session.favorites) {
-      req.session.favorites = [];
-    }
     const favorites = req.session.favorites;
     try {
-      const coffee = await dataMapper.getProductbyId(targetId);
+      const coffee = await dataMapper.getProductById(targetId);
       res.render("article", { coffee, favorites });
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`)
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
   async categoryPage(req,res) {
     try {
       const targetCat = req.query.category;
-      const coffees = await dataMapper.getProductbyCategory(targetCat);
-      res.render("catalogue", { coffees });
+      const favorites = req.session.favorites;
+      const coffees = await dataMapper.getProductByCategory(targetCat);
+      res.render("catalogue", { coffees, favorites });
     }
     catch (error) {
-      res.status(500).send(`Erreur de notre côté : ${error}`)
+      console.error(error);
+      res.status(500).send("Erreur serveur. Réessayez plus tard")
     }
   },
 };

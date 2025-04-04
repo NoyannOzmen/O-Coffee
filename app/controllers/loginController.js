@@ -6,7 +6,6 @@ const loginController = {
   },
 
   userLogin: async (req,res) => {
-/*     const userLogin = await bcrypt.hash(req.body.login, 8); */
     const userLogin = req.body.login;
     const userPassWord = await bcrypt.hash(req.body.password, 10);
     req.session.login = userLogin;

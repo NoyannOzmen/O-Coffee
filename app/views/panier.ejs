@@ -25,7 +25,7 @@
           <% shoppingList.forEach(function(coffee, key) { %>
             <tr>
               <td>
-                  <img class="coffee-cart-img" src="/integration/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %>">
+                  <img class="coffee-cart-img" src="/images/<%= coffee.reference %>.webp" alt="<%= coffee.name %>">
               </td>
 
               <td>
@@ -78,6 +78,6 @@
   </div>
 </div>
 
-<script defer src="/integration/calcul.js"></script>
+<script defer src="/js/calcul.js"></script>
 
 <%- include('partials/footer') %>

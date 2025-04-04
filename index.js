@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const bcrypt = require('bcryptjs');
 const flash = require('connect-flash')
 
 const router = require('./app/router');
@@ -15,19 +14,24 @@ const app = express();
 app.set("views", "./app/views");
 app.set("view engine", "ejs");
 
-app.use("/integration", express.static('integration'));
+app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
   resave: true, 
   saveUninitialized: true,
-  secret: "Santa",
+  secret: process.env.SECRET,
   cookie: {
     secure: false,
     maxAge: (1000*60*60)
   }
 }));
+
+app.use((req, res, next) => {
+  req.session.favorites = req.session.favorites || [];
+  next();
+})
 
 app.use(flash());
 

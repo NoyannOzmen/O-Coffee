@@ -56,7 +56,7 @@ table {
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('/integration/fonts/icomoon.woff?eu0ody') format('woff');
+  src:  url('/fonts/icomoon.woff?eu0ody') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -64,7 +64,7 @@ table {
 
 @font-face {
   font-family: 'icomoon2';
-  src:  url('/integration/fonts/icomoon2.woff') format('woff');
+  src:  url('/fonts/icomoon2.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -133,7 +133,7 @@ header {
   display : flex;
   justify-content: space-between;
   align-items: center;
-  background: #6f4e37 left / contain no-repeat url(/integration/images/logo.svg) ;
+  background: #6f4e37 left / contain no-repeat url(/images/logo.svg) ;
   height: 6vh;
 }
 
@@ -345,7 +345,7 @@ span {
 }
 
 .catalogue-header {
-  background: #6f4e37 center / cover no-repeat url(/integration/images/aboutbanner.webp);
+  background: #6f4e37 center / cover no-repeat url(/images/aboutbanner.webp);
   height:15vh;
   line-height: 15vh;
   color: #fffdd0;
